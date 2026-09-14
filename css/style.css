@@ -6,11 +6,11 @@ header {
     background-color: rgb(202, 199, 193);
 }
 
-li>a{
+li>a , .about-backhome {
     text-decoration: none;
     color: inherit;
 }
-li>a:hover {
+li>a:hover , .about-backhome:hover {
     text-decoration: underline;
 }
 
@@ -50,5 +50,5 @@ footer {
         width: 45%;
         margin-bottom: 20px;
     }
-    
+
 }

@@ -21,7 +21,7 @@ li > a:hover , a.about-backhome:hover {
     margin: 2em 0;
     color: #fff;/*文字色*/
     background: #6091d3;
-    border: solid 2px #000000;/*線*/
+    border: solid 1px #000000;/*線*/
     border-radius: 10px;/*角の丸み*/
 }
 .about-backhome {

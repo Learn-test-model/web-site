@@ -30,3 +30,15 @@ footer {
 
 /* 開発 */
 
+/* 一覧（products） */
+.product-sample-images {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100vh;
+}
+
+.product-sample-images img {
+    max-width: 30%;
+    height: auto;
+}

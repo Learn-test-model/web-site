@@ -5,7 +5,7 @@ header {
     background-color: rgb(202, 199, 193);
 }
 /* ヘッダーリンクの装飾を外し、ホバーした際に下線を引く */
-li > a , a.about-backhome { 
+li > a /* , a.about-backhome {  */{
     text-decoration: none;
     color: inherit;
 }

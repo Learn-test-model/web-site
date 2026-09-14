@@ -4,29 +4,56 @@
 header {
     background-color: rgb(202, 199, 193);
 }
-/* ヘッダーリンクの装飾を外し、ホバーした際に下線を引く */
-li > a {
-    text-decoration: none;
-    color: inherit;
+
+/* ヘッダーのリストの黒丸を削除し、左に詰める */
+ul {
+    padding-left:0;     /*リスト横の規定空白を削除*/
+}
+li {
+    display: inline-block;    /*リストを横並びにする*/
+    list-style:none;        /*リスト横の点を削除*/
 }
 
-li > a:hover , a.about-backhome:hover {
+/* ヘッダーリンクの装飾を外し、ホバーした際に下線を引く */
+li > a {
+    display: inline-block;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    background: #668ad8;/*ボタン色*/
+    color: #FFF;
+    border-bottom: solid 4px #627295;
+    border-radius: 3px;
+    /*
+    text-decoration: none;
+    color: inherit; 
+    */
+}
+
+li > a:active {
+    /*
     text-decoration: underline;
+    */
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);/*下に動く*/
+    border-bottom: none;/*線を消す*/
 }
 
 /* about */
 /* About usのHomeに戻るボタン */
-.about-backhome.p{
-    padding: 0.5em 1em;
-    margin: 2em 0;
-    color: #fff;/*文字色*/
-    background: #6091d3;
-    border: solid 1px #000000;/*線*/
-    border-radius: 10px;/*角の丸み*/
-}
 .about-backhome {
-    margin: 0; 
-    padding: 0;
+    display: inline-block;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    background: #668ad8;/*ボタン色*/
+    color: #FFF;
+    border-bottom: solid 4px #627295;
+    border-radius: 3px;
+}
+.about-backhome:active {
+    /*ボタンを押したとき*/
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);/*下に動く*/
+  border-bottom: none;/*線を消す*/
 }
 
 /* footer共通 */

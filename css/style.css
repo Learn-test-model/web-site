@@ -31,14 +31,24 @@ footer {
 /* 開発 */
 
 /* 一覧（products） */
-.product-sampleimages {
+.product-images {
     display: flex;
     justify-content: space-around;
-    align-items: center;
-    height: 100vh;
+    
 }
 
-.product-sampleimages img {
-    max-width: 30%;
+.product-images img {
+    width: 30%;
     height: auto;
+}
+@media (max-width: 768px){
+    .product-images{
+        flex-wrap: wrap;
+    }
+
+    .product-images img{
+        width: 45%;
+        margin-bottom: 20px;
+    }
+    
 }

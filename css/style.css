@@ -6,11 +6,11 @@ header {
     background-color: rgb(202, 199, 193);
 }
 
-li>a , .about-backhome {
+li>a , a.about-backhome {
     text-decoration: none;
     color: inherit;
 }
-li>a:hover , .about-backhome:hover {
+li>a:hover , a.about-backhome:hover {
     text-decoration: underline;
 }
 

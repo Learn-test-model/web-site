@@ -16,12 +16,12 @@ li > a:hover , a.about-backhome:hover {
 
 /* about */
 /* About usのHomeに戻るボタン */
-.about-backhome p {
+.about-backhome {
     padding: 0.5em 1em;
     margin: 2em 0;
     color: #fff;/*文字色*/
     background: #6091d3;
-    border: solid 5px #000000;/*線*/
+    border: solid 2px #000000;/*線*/
     border-radius: 10px;/*角の丸み*/
 }
 .about-backhome {
@@ -34,6 +34,11 @@ footer {
     background-color: rgb(202, 199, 193);
     text-align: center;
 }
+
+.footer-aboutus{
+    color: inherit;
+}
+
 
 .footer-p{
     margin: 0;

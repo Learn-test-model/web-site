@@ -15,7 +15,7 @@ li>a:hover , a.about-backhome:hover {
 
 /* about */
 /* About usのHomeに戻るボタン */
-.about-backhome {
+a.about-backhome {
     padding: 0.5em 1em;
     margin: 2em 0;
     font-weight: bold;

@@ -74,7 +74,7 @@ footer {
 /* 開発 */
 
 /* 一覧（products） */
-.product-images a{
+.img{
     display: flex;
     justify-content: space-around;
 }

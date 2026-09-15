@@ -14,7 +14,7 @@ li {
     list-style:none;        /*リスト横の点を削除*/
 }
 
-/* ヘッダーリンクの装飾を外し、ホバーした際に下線を引く */
+/* ヘッダーリンクの装飾を外し、ボタン化　*/
 li > a {
     display: inline-block;
     padding: 0.5em 1em;
@@ -28,7 +28,7 @@ li > a {
     color: inherit; 
     */
 }
-
+/* クリック時にボタンを押下する動き */
 li > a:active {
     /*
     text-decoration: underline;
@@ -110,7 +110,8 @@ footer {
 .product-images figcaption {
 	padding: 0 0.3em;
 	font-size: 10.5pt;
-	color: #336;
+    text-decoration: none;
+	color: #000;
     text-align: center;
 
 	/* テキストを 1行だけの表示にし、テキストが figcaption タグの
@@ -120,30 +121,4 @@ footer {
 	white-space: nowrap;         /* テキストを改行しない。 */
 	text-overflow: ellipsis;     /* テキストの末尾を「・・・」にする。 */
 }
-/*figure img {
-    display: flex;
-    justify-content: space-around;
-}
 
-.product-images a {
-    
-    text-decoration: none;
-    color: #000;
-}
-
-figcaption{
-    text-align: center;
-}
-/* 
-@media (max-width: 768px){ 
-    .product-images{
-        flex-wrap: wrap;
-    }
-
-    .product-images img{
-        width: 45%;
-        margin-bottom: 20px;
-    }
-
-}
-*/

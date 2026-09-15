@@ -83,7 +83,7 @@ footer {
 	gap: 12px 12px;          /* figure タグ間の余白の調整 (行間 列間)。 */
 }
 
-.product-images > figure {
+.product-images figure {
 	margin: 0;
 	padding: 6px;
 
@@ -93,7 +93,7 @@ footer {
 	box-shadow: 1px 1px 3px #aaa;
 }
 
-.product-images > figure > a >img {
+.product-images img {
 
 	box-sizing: border-box;
 	width: 100%;
@@ -107,7 +107,7 @@ footer {
 	object-fit: contain;     /* contain, cover, scale-down など */
 }
 
-.product-images > figure > a >figcaption {
+.product-images figcaption {
 	padding: 0 0.3em;
 	font-size: 10.5pt;
 	color: #336;

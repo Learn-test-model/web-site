@@ -111,6 +111,7 @@ footer {
 	padding: 0 0.3em;
 	font-size: 10.5pt;
 	color: #336;
+    text-align: center;
 
 	/* テキストを 1行だけの表示にし、テキストが figcaption タグの
 	 幅に収まらないときには末尾を「・・・」にする例。

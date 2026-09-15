@@ -74,13 +74,13 @@ footer {
 /* 開発 */
 
 /* 一覧（products） */
-.product-images {
+.product-images a{
     display: flex;
     justify-content: space-around;
     
 }
 
-.product1-cont img {
+.product-imges a img {
     width: 30%;
     height: auto;
 }

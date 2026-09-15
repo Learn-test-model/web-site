@@ -80,11 +80,12 @@ footer {
     
 }
 
-.product-images img {
+.product-images a img {
     width: 30%;
     height: auto;
 }
-@media (max-width: 768px){
+/* 
+@media (max-width: 768px){ 
     .product-images{
         flex-wrap: wrap;
     }
@@ -95,3 +96,4 @@ footer {
     }
 
 }
+*/

@@ -77,10 +77,9 @@ footer {
 .product-images a{
     display: flex;
     justify-content: space-around;
-    
 }
 
-.product-images a img {
+a.img {
     width: 30%;
     height: auto;
 }

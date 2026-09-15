@@ -84,6 +84,10 @@ a figure,a img {
     text-decoration: none;
     color: #000;
 }
+
+figcaption{
+    text-align: center;
+}
 /* 
 @media (max-width: 768px){ 
     .product-images{

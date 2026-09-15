@@ -83,7 +83,7 @@ footer {
 	gap: 12px 12px;          /* figure タグ間の余白の調整 (行間 列間)。 */
 }
 
-.product-images > a > figure {
+.product-images > figure {
 	margin: 0;
 	padding: 6px;
 

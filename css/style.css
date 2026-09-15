@@ -74,7 +74,52 @@ footer {
 /* 開発 */
 
 /* 一覧（products） */
-figure img {
+.product-images {
+	display: grid;           /* グリッドレイアウトにする。 */
+
+	/* repeat(auto-fill, minmax(画像の最小幅, 1fr) で指定する。*/
+	grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+
+	gap: 12px 12px;          /* figure タグ間の余白の調整 (行間 列間)。 */
+}
+
+.product-images > a > figure {
+	margin: 0;
+	padding: 6px;
+
+	/* 周囲を丸くし box-shadow で影を付ける例。 */
+	background: #fff;
+	border-radius: 12px;
+	box-shadow: 1px 1px 3px #aaa;
+}
+
+.product-images > a > figure > img {
+
+	box-sizing: border-box;
+	width: 100%;
+	height: 180px;           /* 高さを揃える例。 */
+
+	/* 画像が img タグの大きさに収まるように画像の配置を調整する。
+	  contain では画像が img より小さい場合は拡大されます。
+	  scale-down では小さな画像も原寸サイズで表示します。
+	  cover は余白ができないように調整します。画像の一部がカットされます。
+	*/
+	object-fit: contain;     /* contain, cover, scale-down など */
+}
+
+.product-images > a > figure > figcaption {
+	padding: 0 0.3em;
+	font-size: 10.5pt;
+	color: #336;
+
+	/* テキストを 1行だけの表示にし、テキストが figcaption タグの
+	 幅に収まらないときには末尾を「・・・」にする例。
+	 */
+	overflow: hidden;            /* 枠からあふれる部分は表示しない。*/
+	white-space: nowrap;         /* テキストを改行しない。 */
+	text-overflow: ellipsis;     /* テキストの末尾を「・・・」にする。 */
+}
+/*figure img {
     display: flex;
     justify-content: space-around;
 }

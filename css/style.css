@@ -79,7 +79,7 @@ a img {
     justify-content: space-around;
 }
 
-.product-images.a {
+.product-images > a {
     text-decoration: none;
 }
 /* 

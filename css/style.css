@@ -93,7 +93,7 @@ footer {
 	box-shadow: 1px 1px 3px #aaa;
 }
 
-.product-images > a > figure > img {
+.product-images > figure > a >img {
 
 	box-sizing: border-box;
 	width: 100%;
@@ -107,7 +107,7 @@ footer {
 	object-fit: contain;     /* contain, cover, scale-down など */
 }
 
-.product-images > a > figure > figcaption {
+.product-images > figure > a >figcaption {
 	padding: 0 0.3em;
 	font-size: 10.5pt;
 	color: #336;

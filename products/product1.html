@@ -4,20 +4,342 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>product1</title>
+
+<style>
+
+body{
+    font-family:"Hiragino Sans","Yu Gothic",sans-serif;
+    background:#f0f8ff;
+    text-align:center;
+    margin:0;
+    padding:20px;
+}
+
+h1{
+    color:#333;
+    font-size:clamp(2rem,5vw,3rem);
+    margin:0;
+}
+
+#question{
+    font-size:clamp(3rem,8vw,5rem);
+    color:#ff6600;
+    margin:10px 0;
+    font-weight:bold;
+}
+
+.choice{
+    display:block;
+    width:min(90vw,500px);
+    margin:15px auto;
+    padding:20px;
+
+    border:none;
+    border-radius:15px;
+
+    background:#4CAF50;
+    color:white;
+
+    font-size:clamp(1.4rem,3vw,2rem);
+
+    cursor:pointer;
+    transition:0.2s;
+}
+
+.choice:hover{
+    background:#43a047;
+}
+
+.choice:disabled{
+    background:#999;
+}
+
+#result{
+    margin-top:25px;
+    font-size:clamp(1.8rem,4vw,2.5rem);
+    font-weight:bold;
+}
+
+#score{
+    margin-top:0px;
+    font-size:clamp(1.2rem,3vw,2rem);
+}
+
+#progress{
+    font-size:1.4rem;
+    color:#555;
+}
+
+#nextBtn{
+    display:none;
+    margin-top:0px;
+
+    padding:15px 30px;
+
+    font-size:1.5rem;
+
+    border:none;
+    border-radius:10px;
+
+    background:#2196F3;
+    color:white;
+
+    cursor:pointer;
+}
+
+#nextBtn:hover{
+    background:#1976D2;
+}
+
+#container{
+    max-width:900px;
+    margin:auto;
+}
+
+</style>
 </head>
+
 <body>
-    <header>
+
+<div id="container">
+
+<h1>🎓ひらがなクイズ</h1>
+
+<div id="progress"></div>
+
+<div id="question"></div>
+
+<div id="choices"></div>
+
+<div id="result"></div>
+
+<div id="score">
+とくてん：0
+</div>
+
+<button id="nextBtn" onclick="nextQuestion()">
+つぎのもんだいへ
+</button>
+
+</div>
+
+<script>
+
+const quiz = [
+
+{
+question:"🍎",
+choices:["りんご","ぶどう","もも"],
+answer:"りんご"
+},
+
+{
+question:"🍇",
+choices:["もも","いちご","ぶどう"],
+answer:"ぶどう"
+},
+
+{
+question:"🍌",
+choices:["みかん","ばなな","りんご"],
+answer:"ばなな"
+},
+
+{
+question:"🥕",
+choices:["にんじん","ぶどう","いちご"],
+answer:"にんじん"
+},
+
+{
+question:"🍑",
+choices:["もも","にんじん","いちご"],
+answer:"もも"
+},
+
+{
+question:"🍆",
+choices:["いちご","なす","ばなな"],
+answer:"なす"
+},
+
+{
+question:"🍓",
+choices:["みかん","ぶどう","いちご"],
+answer:"いちご"
+},
+
+{
+question:"🍆",
+choices:["なし","なす","すし"],
+answer:"なす"
+},
+
+{
+question:"🧅",
+choices:["にんじん","りんご","たまねぎ"],
+answer:"たまねぎ"
+},
+
+{
+question:"🌽",
+choices:["らでぃっしゅ","とうもろこし","さやえんどう"],
+answer:"とうもろこし"
+}
+
+];
+
+let currentQuestion = 0;
+let score = 0;
+
+function showQuestion(){
+
+const q = quiz[currentQuestion];
+
+document.getElementById("progress").textContent =
+`もんだい ${currentQuestion + 1} / ${quiz.length}`;
+
+document.getElementById("question").textContent =
+q.question;
+
+document.getElementById("result").textContent = "";
+
+document.getElementById("nextBtn").style.display =
+"none";
+
+const choicesDiv =
+document.getElementById("choices");
+
+choicesDiv.innerHTML = "";
+
+q.choices.forEach(choice=>{
+
+const btn =
+document.createElement("button");
+
+btn.className = "choice";
+
+btn.textContent = choice;
+
+btn.onclick = function(){
+checkAnswer(choice);
+};
+
+choicesDiv.appendChild(btn);
+
+});
+
+}
+
+function checkAnswer(choice){
+
+const q = quiz[currentQuestion];
+
+const result =
+document.getElementById("result");
+
+if(choice === q.answer){
+
+score++;
+
+result.textContent =
+"⭕ せいかい！";
+
+result.style.color = "green";
+
+}else{
+
+result.textContent =
+"❌ ざんねん！";
+
+result.style.color = "red";
+
+}
+
+document.getElementById("score").textContent =
+"とくてん：" + score;
+
+document.querySelectorAll(".choice")
+.forEach(btn=>{
+btn.disabled = true;
+});
+
+document.getElementById("nextBtn")
+.style.display = "inline-block";
+
+}
+
+function nextQuestion(){
+
+currentQuestion++;
+
+if(currentQuestion < quiz.length){
+
+showQuestion();
+
+}else{
+
+showFinalResult();
+
+}
+
+}
+
+function showFinalResult(){
+
+document.getElementById("container").innerHTML = `
+
+<h1>🎉 クイズしゅうりょう！</h1>
+
+<h2 style="font-size:2rem;">
+${quiz.length}もんちゅう
+${score}もん せいかい！
+</h2>
+
+<p style="font-size:1.5rem;">
+
+${score === 10 ?
+"☪️ぜんもんせいかい！すばらしい！☪️" :
+
+score >= 7 ?
+"🟪よくできました！🟪" :
+
+score >= 4 ?
+"😊 がんばりました！" :
+
+"💪 もういちどチャレンジ！"}
+
+</p>
+
+<button
+style="
+padding:15px 30px;
+font-size:1.5rem;
+border:none;
+border-radius:10px;
+background:#4CAF50;
+color:white;
+cursor:pointer;
+"
+onclick="location.reload()">
+
+もういちどあそぶ
+
+</button>
+`;
+
+}
+
+showQuestion();
+
+</script>
+
+
+    <footer>
         <p><a href="index.html">戻る</a></p>
 
+    </footer>
 
-    </header>
-    <main>
-
-
-
-
-
-    </main>
 <link rel="stylesheet" href="../css/style.css">
 </body>
 </html>

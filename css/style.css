@@ -74,15 +74,13 @@ footer {
 /* 開発 */
 
 /* 一覧（products） */
-.product-images {
+.product-images.a.img {
     display: flex;
     justify-content: space-around;
-    text-decoration: none;
 }
 
-a img {
-    width: 10%;
-    height: auto;
+.product-images.a {
+    text-decoration: none;
 }
 /* 
 @media (max-width: 768px){ 

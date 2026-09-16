@@ -122,7 +122,7 @@ footer {
 	 幅に収まらないときには末尾を「・・・」にする例。
 	 */
 	overflow: hidden;            /* 枠からあふれる部分は表示しない。*/
-	white-space: nowrap;         /* テキストを改行しない。 */
-	text-overflow: ellipsis;     /* テキストの末尾を「・・・」にする。 */
+	/* white-space: nowrap;         テキストを改行しない。 */
+	/* text-overflow: ellipsis;     テキストの末尾を「・・・」にする。 */
 }
 
